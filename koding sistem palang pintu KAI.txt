@@ -1,0 +1,22 @@
+;zulfi alfian s;
+;nim 1187070093:
+;program untuk simulasi sistem palang pintu KAI;
+
+ ORG   0H        
+;
+MULAI:  MOV   P1,#10101010B     
+        ACALL DELAY             
+        MOV   P1,#01010101B   
+	 
+        ACALL DELAY             
+        SJMP  MULAI           
+DELAY:  MOV   R0,#5H         
+DELAY1: MOV   R1,#0FFH          
+DELAY2: MOV   R2,#0  
+         
+        DJNZ  R2,$              
+        DJNZ  R1,DELAY2        
+        DJNZ  R0,DELAY1        
+        RET                    
+
+        END
